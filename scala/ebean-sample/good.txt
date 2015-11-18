@@ -1,0 +1,224 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.junk:a-basic-example-2:jar:1.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-plugin is missing. @ line 135, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building a-basic-example 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ a-basic-example-2 ---
+[INFO] Deleting /Users/andrewlynch/git/samples/scala/ebean-sample/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ a-basic-example-2 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ a-basic-example-2 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 7 source files to /Users/andrewlynch/git/samples/scala/ebean-sample/target/classes
+[INFO] 
+[INFO] --- typequery-maven-plugin:1.5.1:enhance (main) @ a-basic-example-2 ---
+TypeQuery Agent: queryBeanPackages[models/query/]
+TypeQuery Agent: packages[]
+[INFO] classSource=target/classes  transformArgs=debug=8 packages=null classPathSize:14
+transform> pkg: 
+transform> pkg: /controllers
+look at controllers/QGenerator
+typequery-enhance> cls: controllers/QGenerator  msg: ... checking method <init> ()V
+typequery-enhance> cls: controllers/QGenerator  msg: ... checking method main ([Ljava/lang/String;)V
+look at controllers/Thing
+typequery-enhance> cls: controllers/Thing  msg: ... checking method <init> ()V
+typequery-enhance> cls: controllers/Thing  msg: ... checking method main ([Ljava/lang/String;)V
+typequery-enhance> cls: controllers/Thing  msg: change getfield models/query/QTask name:id
+typequery-enhance> cls: controllers/Thing  msg: enhanced - getfield calls replaced
+transform> pkg: /META-INF
+transform> pkg: /models
+transform> pkg: /models/finder
+look at models/finder/TaskFinder
+typequery-enhance> cls: models/finder/TaskFinder  msg: ... checking method <init> ()V
+typequery-enhance> cls: models/finder/TaskFinder  msg: ... checking method <init> (Ljava/lang/String;)V
+typequery-enhance> cls: models/finder/TaskFinder  msg: ... checking method where ()Lmodels/query/QTask;
+transform> pkg: /models/query
+transform> pkg: /models/query/assoc
+look at models/query/assoc/QAssocTask
+typequery-enhance> cls: models/query/assoc/QAssocTask  msg: ... adding marker annotation
+typequery-enhance> cls: models/query/assoc/QAssocTask  msg: leaving method as is - fetch ([Lorg/avaje/ebean/typequery/TQProperty;)Ljava/lang/Object; ([Lorg/avaje/ebean/typequery/TQProperty<Lmodels/query/QTask;>;)TR;
+typequery-enhance> cls: models/query/assoc/QAssocTask  msg: ... add fields, basic constructor, main constructor
+typequery-enhance> cls: models/query/assoc/QAssocTask  msg:  ... add method _id assocProperty:false rootBean:false
+typequery-enhance> cls: models/query/assoc/QAssocTask  msg:  ... add method _name assocProperty:false rootBean:false
+typequery-enhance> cls: models/query/assoc/QAssocTask  msg:  ... add method _done assocProperty:false rootBean:false
+typequery-enhance> cls: models/query/assoc/QAssocTask  msg:  ... add method _dueDate assocProperty:false rootBean:false
+typequery-enhance> cls: models/query/assoc/QAssocTask  msg: enhanced as type query bean
+look at models/query/QTask
+typequery-enhance> cls: models/query/QTask  msg: ... adding marker annotation
+typequery-enhance> cls: models/query/QTask  msg: leaving method as is - alias ()Lmodels/query/QTask; null
+typequery-enhance> cls: models/query/QTask  msg: replace constructor code <init> (Lcom/avaje/ebean/EbeanServer;)V
+typequery-enhance> cls: models/query/QTask  msg: replace constructor code <init> ()V
+typequery-enhance> cls: models/query/QTask  msg: replace constructor code <init> (Z)V
+typequery-enhance> cls: models/query/QTask  msg: leaving method as is - <clinit> ()V null
+typequery-enhance> cls: models/query/QTask  msg:  ... add method _id assocProperty:false rootBean:true
+typequery-enhance> cls: models/query/QTask  msg:  ... add method _name assocProperty:false rootBean:true
+typequery-enhance> cls: models/query/QTask  msg:  ... add method _done assocProperty:false rootBean:true
+typequery-enhance> cls: models/query/QTask  msg:  ... add method _dueDate assocProperty:false rootBean:true
+typequery-enhance> cls: models/query/QTask  msg: enhanced as type query bean
+look at models/Task
+[INFO] 
+[INFO] --- avaje-ebeanorm-mavenenhancer:4.7.1:enhance (main) @ a-basic-example-2 ---
+[INFO] Current Directory: /Users/andrewlynch/git/samples/scala/ebean-sample
+[INFO] classSource=target/classes  transformArgs=debug=8  packages=models.**
+ebean-enhance> transform> pkg: models
+ebean-enhance> transform> pkg: models/finder
+ebean-enhance> cls: models/finder/TaskFinder  msg: performing detection
+ebean-enhance> cls: models/finder/TaskFinder  msg: interfaces:  entityInterface[false] transactional[false]
+ebean-enhance> transform> pkg: models/query
+ebean-enhance> transform> pkg: models/query/assoc
+ebean-enhance> cls: models/query/assoc/QAssocTask  msg: performing detection
+ebean-enhance> cls: models/query/assoc/QAssocTask  msg: interfaces:  entityInterface[false] transactional[false]
+ebean-enhance> cls: models/query/assoc/QAssocTask  msg: visitAnnotation Lorg/avaje/ebean/typequery/TypeQueryBean;
+ebean-enhance> cls: models/query/assoc/QAssocTask  msg: visitAnnotation Lorg/avaje/ebean/typequery/AlreadyEnhancedMarker;
+ebean-enhance> cls: models/query/assoc/QAssocTask  msg: visitField id null
+ebean-enhance> cls: models/query/assoc/QAssocTask  msg: visitField name null
+ebean-enhance> cls: models/query/assoc/QAssocTask  msg: visitField done null
+ebean-enhance> cls: models/query/assoc/QAssocTask  msg: visitField dueDate null
+ebean-enhance> cls: models/query/QTask  msg: performing detection
+ebean-enhance> cls: models/query/QTask  msg: interfaces:  entityInterface[false] transactional[false]
+ebean-enhance> cls: models/query/QTask  msg: visitAnnotation Lorg/avaje/ebean/typequery/TypeQueryBean;
+ebean-enhance> cls: models/query/QTask  msg: visitAnnotation Lorg/avaje/ebean/typequery/AlreadyEnhancedMarker;
+ebean-enhance> cls: models/query/QTask  msg: visitField _alias null
+ebean-enhance> cls: models/query/QTask  msg: visitField id null
+ebean-enhance> cls: models/query/QTask  msg: visitField name null
+ebean-enhance> cls: models/query/QTask  msg: visitField done null
+ebean-enhance> cls: models/query/QTask  msg: visitField dueDate null
+ebean-enhance> cls: models/Task  msg: performing detection
+ebean-enhance> cls: models/Task  msg: interfaces:  entityInterface[false] transactional[false]
+ebean-enhance> cls: models/Task  msg: visitAnnotation Ljavax/persistence/Entity;
+ebean-enhance> cls: models/Task  msg: found entity annotation Ljavax/persistence/Entity;
+ebean-enhance> cls: models/Task  msg: visitField find null
+ebean-enhance> cls: models/Task  msg: visitField id null
+ebean-enhance> cls: models/Task  msg: visitField name null
+ebean-enhance> cls: models/Task  msg: performing entity transform
+ebean-enhance> cls: models/Task  msg: ... add EntityBean interface
+ebean-enhance> cls: models/Task  msg: read information about superClasses com/avaje/ebean/Model to see if it is entity/embedded/mappedSuperclass
+ebean-enhance> cls: com/avaje/ebean/Model  msg: read ClassMeta
+ebean-enhance> cls: com/avaje/ebean/Model  msg: mappedSuperClass with equals/hashCode or persistentFields: false
+ebean-enhance> cls: models/Task  msg: superMeta com/avaje/ebean/Model is not an entity/embedded/mappedsuperclass (with equals or persistent fields)
+ebean-enhance> cls: models/Task  msg: Skip intercepting static field find
+ebean-enhance> cls: models/Task  msg: ... add marker field "models.Task"
+ebean-enhance> cls: models/Task  msg: ... add _ebean_props field
+ebean-enhance> cls: models/Task  msg: ... add intercept and identity fields
+ebean-enhance> cls: models/Task  msg: --- #### method name[<init>] desc[()V] sig[null]
+ebean-enhance> cls: models/Task  msg: ... not consuming many owner:com/avaje/ebean/Model name:<init> desc:()V
+ebean-enhance> cls: models/Task  msg: ... adding intercept <init> in CONSTRUCTOR:()V OWNER/SUPER:com/avaje/ebean/Model
+ebean-enhance> cls: models/Task  msg: ... constructorInitializationDone com/avaje/ebean/Model
+ebean-enhance> cls: models/Task  msg: --- #### method name[<clinit>] desc[()V] sig[null]
+ebean-enhance> cls: models/Task  msg: ... --- #### enhance existing static init method
+ebean-enhance> cls: models/Task  msg: ... add _ebean_getPropertyNames() and _ebean_getPropertyName()
+ebean-enhance> cls: models/Task  msg: ... add _ebean_getIntercept() and _ebean_setIntercept()
+ebean-enhance> cls: models/Task  msg: _ebean_get_id ()Ljava/lang/Long; intercept:false [Ljavax/persistence/Id;]
+ebean-enhance> cls: models/Task  msg: _ebean_set_id (Ljava/lang/Long;)V intercept:false opCode:25,1 preSetterArgTypesLjava/lang/Object;Ljava/lang/Object;
+ebean-enhance> cls: models/Task  msg: _ebean_getni_id ()Ljava/lang/Long;
+ebean-enhance> cls: models/Task  msg: _ebean_setni_id (Ljava/lang/Long;)V opCode:25,1
+ebean-enhance> cls: models/Task  msg: _ebean_get_name ()Ljava/lang/String; intercept:true []
+ebean-enhance> cls: models/Task  msg: _ebean_set_name (Ljava/lang/String;)V intercept:true opCode:25,1 preSetterArgTypesLjava/lang/Object;Ljava/lang/Object;
+ebean-enhance> cls: models/Task  msg: _ebean_getni_name ()Ljava/lang/String;
+ebean-enhance> cls: models/Task  msg: _ebean_setni_name (Ljava/lang/String;)V opCode:25,1
+ebean-enhance> cls: models/Task  msg: fields size:2 [id, name]
+ebean-enhance> cls: models/Task  msg: adding equals() hashCode() and _ebean_getIdentity() with Id field id index:0 primitive:false
+ebean-enhance> cls: models/Task  msg: enhanced 
+[INFO] Enhanced target/classes/models/Task.class
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ a-basic-example-2 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/andrewlynch/git/samples/scala/ebean-sample/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ a-basic-example-2 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /Users/andrewlynch/git/samples/scala/ebean-sample/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ a-basic-example-2 ---
+[INFO] Surefire report directory: /Users/andrewlynch/git/samples/scala/ebean-sample/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running models.TheTest
+17:16:18,038 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+17:16:18,038 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+17:16:18,038 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/Users/andrewlynch/git/samples/scala/ebean-sample/target/classes/logback.xml]
+17:16:18,135 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+17:16:18,413 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word coloredLevel with class [play.api.Logger$ColoredLevel]
+17:16:18,422 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [play] to INFO
+17:16:18,422 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [application] to DEBUG
+17:16:18,422 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to ERROR
+17:16:18,423 |-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+17:16:18,423 |-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+17:16:18,423 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+17:16:18,424 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@60f82f98 - Registering current configuration as safe fallback point
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.117 sec <<< FAILURE!
+testStuff(models.TheTest)  Time elapsed: 1.049 sec  <<< ERROR!
+java.lang.NullPointerException
+	at models.TheTest.testStuff(TheTest.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+
+Results :
+
+Tests in error: 
+  testStuff(models.TheTest)
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4.103 s
+[INFO] Finished at: 2015-11-17T17:16:19+07:00
+[INFO] Final Memory: 18M/171M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project a-basic-example-2: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/andrewlynch/git/samples/scala/ebean-sample/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

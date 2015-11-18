@@ -1,0 +1,6 @@
+Examples EBean query project
+=================================
+
+An example of the EBean query generation in affect.
+To recreate the query beans/finders/fields, delete them from the models package.
+You will need to comment out the code in Access.java until the query beans are available again.

@@ -1,0 +1,9 @@
+[0m[[0minfo[0m] [0mLoading project definition from /Users/andrewlynch/git/samples/scala/ebean-sample/project[0m
+[0m[[0minfo[0m] [0mSet current project to ebean-sample (in build file:/Users/andrewlynch/git/samples/scala/ebean-sample/)[0m
+
+[35m--- (Running the application, auto-reloading is enabled) ---[0m
+
+[[37minfo[0m] p.c.s.NettyServer - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+[32m(Server started, use Ctrl+D to stop and go back to the console...)[0m
+
